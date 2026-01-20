@@ -1,48 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f3f4f6;
+  font-family: "Segoe UI", Arial, sans-serif;
   margin: 0;
+  background: #f4f7fb;
+  color: #1f2937;
 }
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-}
-
-h1, h2 {
+header {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  padding: 30px;
   text-align: center;
 }
 
-select, input, textarea, button {
-  width: 100%;
-  margin-top: 10px;
-  padding: 10px;
-  font-size: 15px;
+.tabs {
+  display: flex;
+  justify-content: center;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-button {
-  background: #2563eb;
-  color: white;
+.tab {
+  flex: 1;
+  padding: 15px;
   border: none;
+  background: white;
   cursor: pointer;
+  font-size: 16px;
 }
 
-button:hover {
-  background: #1e40af;
-}
-
-label {
-  margin-top: 10px;
-  display: block;
+.tab.active {
+  border-bottom: 3px solid #2563eb;
   font-weight: bold;
 }
 
-pre {
-  background: #111827;
-  color: #d1d5db;
-  padding: 15px;
-  border-radius: 6px;
+.tab-content {
+  display: none;
+  padding: 20px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.card {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+label {
   margin-top: 15px;
+  display: block;
+  font-weight: 600;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+button.primary {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button.primary:hover {
+  background: #1e40af;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #f1f5f9;
+}
+
+.chat {
+  margin-top: 20px;
+  padding: 15px;
+  background: #111827;
+  color: #e5e7eb;
+  border-radius: 10px;
   white-space: pre-wrap;
+}
+
+@media (max-width: 600px) {
+  .card {
+    margin: 10px;
+  }
 }

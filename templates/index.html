@@ -8,27 +8,39 @@
 </head>
 <body>
 
-<div class="container">
+<header>
   <h1>🩺 AI Clinical Decision Support System</h1>
+  <p>Heart • Diabetes • Kidney Risk Prediction</p>
+</header>
 
-  <select id="disease" onchange="renderForm()">
-    <option value="heart">Heart Disease</option>
-    <option value="diabetes">Diabetes</option>
-    <option value="kidney">Kidney Disease</option>
-  </select>
+<div class="tabs">
+  <button class="tab active" onclick="openTab('predict')">Prediction</button>
+  <button class="tab" onclick="openTab('chat')">AI Chat</button>
+</div>
 
-  <form id="dynamicForm"></form>
+<div id="predict" class="tab-content active">
+  <div class="card">
+    <label>Disease</label>
+    <select id="disease" onchange="renderForm()">
+      <option value="heart">Heart Disease</option>
+      <option value="diabetes">Diabetes</option>
+      <option value="kidney">Kidney Disease</option>
+    </select>
 
-  <button onclick="predict()">Predict</button>
+    <form id="dynamicForm"></form>
 
-  <pre id="result"></pre>
+    <button class="primary" onclick="predict()">Predict Risk</button>
 
-  <hr>
+    <div id="result" class="result"></div>
+  </div>
+</div>
 
-  <h2>💬 AI Medical Chat</h2>
-  <textarea id="chatInput" placeholder="Ask a medical question"></textarea>
-  <button onclick="sendChat()">Send</button>
-  <pre id="chatResult"></pre>
+<div id="chat" class="tab-content">
+  <div class="card">
+    <textarea id="chatInput" placeholder="Ask a medical question..."></textarea>
+    <button class="primary" onclick="sendChat()">Ask AI</button>
+    <div id="chatResult" class="chat"></div>
+  </div>
 </div>
 
 <script src="/static/app.js"></script>
