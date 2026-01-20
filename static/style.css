@@ -3,86 +3,121 @@
 }
 
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
   margin: 0;
-  background: #f4f7fb;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f3f6fb;
   color: #1f2937;
 }
 
+/* ---------- HEADER ---------- */
 header {
   background: linear-gradient(135deg, #2563eb, #1e40af);
   color: white;
-  padding: 30px;
+  padding: 32px 16px;
   text-align: center;
 }
 
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+header p {
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
+/* ---------- TABS ---------- */
 .tabs {
   display: flex;
   justify-content: center;
   background: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 .tab {
   flex: 1;
-  padding: 15px;
+  padding: 14px;
   border: none;
   background: white;
   cursor: pointer;
   font-size: 16px;
+  font-weight: 500;
+}
+
+.tab:hover {
+  background: #f1f5f9;
 }
 
 .tab.active {
   border-bottom: 3px solid #2563eb;
-  font-weight: bold;
+  font-weight: 600;
+  color: #2563eb;
 }
 
+/* ---------- CONTENT ---------- */
 .tab-content {
   display: none;
-  padding: 20px;
+  padding: 24px 16px;
 }
 
 .tab-content.active {
   display: block;
 }
 
+/* ---------- CARD ---------- */
 .card {
   max-width: 900px;
   margin: auto;
   background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
+/* ---------- FORM ---------- */
 label {
-  margin-top: 15px;
   display: block;
+  margin-top: 18px;
   font-weight: 600;
+  font-size: 14px;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   width: 100%;
-  padding: 12px;
   margin-top: 6px;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
+  padding: 12px 14px;
   font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
 }
 
 textarea {
   min-height: 120px;
+  resize: vertical;
 }
 
+/* ---------- BUTTON ---------- */
 button.primary {
-  margin-top: 20px;
+  margin-top: 24px;
   width: 100%;
   padding: 14px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   background: #2563eb;
   color: white;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
 }
 
@@ -90,24 +125,39 @@ button.primary:hover {
   background: #1e40af;
 }
 
+/* ---------- RESULT ---------- */
 .result {
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: 8px;
+  margin-top: 24px;
+  padding: 18px;
+  border-radius: 10px;
   background: #f1f5f9;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
+/* ---------- CHAT ---------- */
 .chat {
-  margin-top: 20px;
-  padding: 15px;
+  margin-top: 24px;
+  padding: 18px;
   background: #111827;
   color: #e5e7eb;
-  border-radius: 10px;
+  border-radius: 12px;
   white-space: pre-wrap;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
+/* ---------- MOBILE ---------- */
 @media (max-width: 600px) {
+  header h1 {
+    font-size: 22px;
+  }
+
   .card {
-    margin: 10px;
+    padding: 20px;
+  }
+
+  .tab {
+    font-size: 14px;
   }
 }
