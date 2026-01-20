@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Clinical Decision Support System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>🩺 AI Clinical Decision Support System</h1>
+
+  <select id="disease" onchange="renderForm()">
+    <option value="heart">Heart Disease</option>
+    <option value="diabetes">Diabetes</option>
+    <option value="kidney">Kidney Disease</option>
+  </select>
+
+  <form id="dynamicForm"></form>
+
+  <button onclick="predict()">Predict</button>
+
+  <pre id="result"></pre>
+
+  <hr>
+
+  <h2>💬 AI Medical Chat</h2>
+  <textarea id="chatInput" placeholder="Ask a medical question"></textarea>
+  <button onclick="sendChat()">Send</button>
+  <pre id="chatResult"></pre>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
